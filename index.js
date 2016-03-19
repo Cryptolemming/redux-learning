@@ -1,3 +1,5 @@
+import React from 'react';
+import { render } from 'react-dom';
 import { createStore } from 'redux';
 
 const reducer = ((state=0, action) => {
@@ -7,22 +9,71 @@ const reducer = ((state=0, action) => {
 	return state;
 });
 
-// 1) create the store
+class Basement extends React.Component {
+	render() {
+		var store = this.context.store;
+		var state = this.store.getState();
+		return (
+			<div>basement!</div>
+		);
+	}
+}
 
-const store = createStore(reducer);
+Basement.contextTypes = {
+	store: React.PropTypes.object
+}
 
-// 2) get the state
+class Middle extends React.Component {
+	render() {
+		return (
+			<div>middle! <Basement /></div>
+		);
+	}
+}
 
-const go = () => {
-	document.body.innerText = store.getState();
+class TopLevel extends React.Component {
+	componentDidMount() {
+		const store = this.context.store;
+		store.subscribe(() => {
+			this.forceUpdate();
+		});
+	}
+	render() {
+		const store = this.context.store;
+		const state = store.getState();
+		return (
+			<div>top! {state}
+				<button onClick={() => { store.dispatch({type: 'UP'}) }}>UP</button>
+				<Middle store={store} />
+			</div>
+		);
+	}
 };
 
-// 3) change the state
+TopLevel.contextTypes = {
+	store: React.PropTypes.object
+}
 
-document.addEventListener('click', () => {
-	store.dispatch({type: 'UP'});
-});
+class Provider extends React.Component {
+	// pass the state to itself as a prop
+	getChildContext() {
+		return {
+			store: this.props.store
+		}
+	}
+	render() {
+		// the HTML from the TopLevel component
+		return this.props.children;
+	}
+};
 
-// 4) subscribe to state changes
+// set childContext types for the Provider
+Provider.childContextTypes = {
+	store: React.PropTypes.object
+}
 
-store.subscribe(go);
+render((
+	<Provider store={createStore(reducer)}>
+		<TopLevel />
+	</Provider>
+), document.getElementById('container')); 
