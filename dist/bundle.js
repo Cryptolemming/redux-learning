@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fc74a9434b82dd1a7506"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5516446fb7bdb27c075c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -1974,9 +1974,9 @@
 
 /***/ },
 /* 234 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _react = __webpack_require__(77);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = function App() {\n\treturn _react2.default.createElement(\n\t\t'div',\n\t\tnull,\n\t\t'Insert Todos here :)'\n\t);\n};\n\nexports.default = App;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./diggs_it_todos/index.js\n ** module id = 234\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./diggs_it_todos/index.js?");
+	eval("\"use strict\";\n\n/*****************\n ** WEBPACK FOOTER\n ** ./diggs_it_todos/index.js\n ** module id = 234\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./diggs_it_todos/index.js?");
 
 /***/ }
 /******/ ]);
