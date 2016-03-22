@@ -21,21 +21,35 @@ module.exports = {
   ],
   module: {
     loaders: [
+      { 
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'stage-0', 'react'],
+          plugins: ["transform-decorators-legacy"]
+        }
+      },
       {
         test: /\.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'stage-0', 'react']
+          presets: ['es2015', 'stage-0', 'react'],
+          plugins: ["transform-decorators-legacy"]
         }
       },
-      { 
-        test: /\.css$/, 
-        loader: ExtractTextPlugin.extract('css-loader?module!cssnext-loader')
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
-    ]
+    ],
+    resolve: {
+      extensions: ['', '.js', '.es6', '.jsx', 'json']
+    },
   },
-  resolve: {
-    extensions: ['', '.js', '.json']
-  }
 };
