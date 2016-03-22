@@ -1,12 +1,12 @@
 import React from 'react';
-import render from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './diggs_it_todos/containers/app';
+import App from './diggs_it_todos/containers/App';
 import configureStore from './diggs_it_todos/store/configureStore';
 
 const store = configureStore()
 
-render(
+ReactDOM.render(
 	<Provider store={store}>
 		<App />
 	</Provider>,
