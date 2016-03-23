@@ -1,16 +1,28 @@
 import React, { PropTypes, Component } from 'react';
 
+var positive = ['love', 'music', 'code', 'program'];
+
 export default class DiggIt extends Component {
 
 	render() {
+		var text = this.props.text.toLowerCase();
+		var diggit;
+		if (positive.some(function(string) {
+			return text.indexOf(string) >= 0;})) {
+			diggit = "DIGGIT!"
+		} 
+		else {
+			diggit = "DON'T DIGGIT!"
+		}
+
 		return (
 			<div>
-				<p>I DIGG IT! {this.props.item}</p>
+				<p>{diggit}</p>
 			</div>
 		)
 	}
 }
 
 DiggIt.propTypes = {
-	item: PropTypes.string.isRequired
+	text: PropTypes.string.isRequired
 }

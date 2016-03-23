@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import DiggIt from './DiggIt';
 import Radium from 'radium';
 
 const styles = {
@@ -15,11 +16,13 @@ export default class List extends Component {
 	}
 
 	render() {
+
 		let handleListItems = this.props.items.map((item, index) => {
 			return(
 				<li key={index} style={styles.list}>
 					<p>{item}</p>
 					<button onClick={this.props.remove.bind(null, index)}>Remove</button>
+					<DiggIt text={item} />
 				</li>
 			)
 		});
