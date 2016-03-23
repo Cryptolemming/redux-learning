@@ -10,23 +10,28 @@ let styles = {
 	container: {
 		padding: 0,
 		margin: 0,
-		width: '100vw',
+		width: '100%',
 	},
-	nav: {
-		width: '100vw',
-		height: '150px',
-		background: '#0288D1',
+	linkContainer: {
+		display: 'inline-block',
+		verticalAlign: 'middle',
+		fontSize: '12px',
+		fontStyle: 'italic',
+		float: 'right',
+		margin: 0,
+		padding: 0,
 	},
 	header: {
+		margin: 0,
 		width: '100%',
-		height: '40vh',
+		height: '50vh',
 		minHeight: '400px',
 		background: '#03A9F4',
 		color: '#B3E5FC',
 		textAlign: 'center',
 	},
 	title: {
-		fontsize: '55',
+		fontsize: '55px',
 		padding: '50px',
 		color: '#FBFBFB',
 	},
@@ -41,6 +46,17 @@ let styles = {
 		minWidth: '250px',
 		alignItems: 'center',
 	},
+	footer: {
+		bottom: 0,
+		position: 'fixed',
+		height: '25px',
+		background: 'transparent',
+	},
+	footerLink: {
+		color: '#03A9F4',
+		fontSize: '12px',
+		padding: '15px',
+	}
 }
 
 @Radium
@@ -48,20 +64,20 @@ class App extends Component {
 	render() {
 		const { todos, actions } = this.props 
 		return(
-			<div className='container'>
-				<div styles={styles.nav}>
-					<p>nav</p>
-				</div>
+			<div style={styles.container}>
 				<div style={styles.header}>
 					<h1 style={styles.title}>DIGG-ITS</h1>
 					<div style={styles.todoAdd}>
-						<h3>Is your TODO worthy of a DIGG-IT?</h3>
+						<h3>Will your TODO earn a DIGG-IT?</h3>
 						<h3>Add one to find out</h3>
 						<AddItem add={actions.addItem} />
 					</div>
 				</div>
 				<div style={styles.todoList}>
 						<List items={todos} remove={actions.removeItem} />
+				</div>
+				<div style={styles.footer}>
+					<a style={styles.footerLink} href='https://www.amoderndev.com'>created by ali ayoub</a> 
 				</div>
 			</div>
 		)

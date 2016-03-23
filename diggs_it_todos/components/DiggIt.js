@@ -1,23 +1,38 @@
 import React, { PropTypes, Component } from 'react';
+import Radium from  'radium';
 
-var positive = ['love', 'music', 'code', 'program'];
+let styles = {
+	diggit: {
+		float: 'right',
+		background: '#FF4081',
+		borderRadius: '50%',
+		fontSize: '12px',
+		padding: '10px',
+		height: '55px',
+		width: '55px',
+		verticalAlign: 'middle',
+	}
+}
 
+const DIGGIT_WORDS = ['love', 'music', 'code', 'program'];
+
+@Radium
 export default class DiggIt extends Component {
 
 	render() {
 		var text = this.props.text.toLowerCase();
 		var diggit;
-		if (positive.some(function(string) {
+		if (DIGGIT_WORDS.some(function(string) {
 			return text.indexOf(string) >= 0;})) {
-			diggit = "DIGGIT!"
+			diggit = <p style={styles.diggit}>"DIGGIT!"</p>
 		} 
 		else {
-			diggit = "DON'T DIGGIT!"
+			diggit = null
 		}
 
 		return (
 			<div>
-				<p>{diggit}</p>
+				{diggit}
 			</div>
 		)
 	}

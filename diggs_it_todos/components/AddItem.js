@@ -1,5 +1,16 @@
 import React, { PropTypes, Component } from 'react';
+import Radium from 'radium';
 
+let styles = {
+	todo: {
+		color: '#727272',
+	},
+	input: {
+		padding: '5px 15px',
+	}
+}
+
+@Radium
 export default class AddItem extends Component {
 
 	handleSubmit(e) {
@@ -12,8 +23,8 @@ export default class AddItem extends Component {
 
 	render() {
 		return (
-			<div>
-				<input type='text' ref='newItem' placeholder='New Item' onKeyDown={this.handleSubmit.bind(this)} />
+			<div style={styles.todo}>
+				<input style={styles.input} type='text' ref='newItem' placeholder='New Item' onKeyDown={this.handleSubmit.bind(this)} />
 			</div>
 		)
 	}

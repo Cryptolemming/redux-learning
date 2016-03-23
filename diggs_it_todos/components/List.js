@@ -8,12 +8,13 @@ const styles = {
 		background: '#0288D1',
 		padding: '25px',
 		margin: '25px',
-		borderRadius: '15px',
 		color: '#FBFBFB',
-		fontSize:  '25px',
+		fontSize:  '16px',
+		alignItems: 'center',
 	},
-	todoText: {
-
+	remove: {
+		fontSize: '14px',
+		background: '#727272',
 	}
 }
 
@@ -30,7 +31,7 @@ export default class List extends Component {
 			return(
 				<li key={index} style={styles.todo}>
 					<p>{item}</p>
-					<button onClick={this.props.remove.bind(null, index)}>Remove</button>
+					<button style={styles.remove} onClick={this.props.remove.bind(null, index)}>Completed</button>
 					<DiggIt text={item} />
 				</li>
 			)

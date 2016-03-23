@@ -1,15 +1,19 @@
+@import 'reset.css';
+
 html, body {
 	padding: 0;
 	margin: 0;
 	width: 100%;
 	min-width: 1000px;
-	height: 100%;
-	min-height: 600px;
 	font-family: 'Open Sans';
 	color: #212121;
 	background: #FBFBFB;
 	letter-spacing: 1.2px;
-	line-height: 120%;
+}
+
+a {
+	color: #FBFBFB;
+	text-decoration: none;
 }
 
 ul {
