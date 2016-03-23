@@ -31,9 +31,14 @@ let styles = {
 		textAlign: 'center',
 	},
 	title: {
-		fontsize: '55px',
+		fontsize: '85px',
 		padding: '50px',
 		color: '#FBFBFB',
+	},
+	divider: {
+		width: '100%',
+		height: '25px',
+		background: '#0288D1',
 	},
 	todoAdd: {
 		padding: '60px',
@@ -53,7 +58,7 @@ let styles = {
 		background: 'transparent',
 	},
 	footerLink: {
-		color: '#03A9F4',
+		color: '#0288D1',
 		fontSize: '12px',
 		padding: '15px',
 	}
@@ -73,6 +78,7 @@ class App extends Component {
 						<AddItem add={actions.addItem} />
 					</div>
 				</div>
+				<div style={styles.divider}></div>
 				<div style={styles.todoList}>
 						<List items={todos} remove={actions.removeItem} />
 				</div>

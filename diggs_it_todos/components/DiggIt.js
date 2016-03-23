@@ -8,13 +8,13 @@ let styles = {
 		borderRadius: '50%',
 		fontSize: '12px',
 		padding: '10px',
-		height: '55px',
+		height: '35px',
 		width: '55px',
 		verticalAlign: 'middle',
 	}
 }
 
-const DIGGIT_WORDS = ['love', 'music', 'code', 'program'];
+const DIGGIT_WORDS = ['love', 'music', 'code', 'program', 'learn', 'cool', 'build'];
 
 @Radium
 export default class DiggIt extends Component {
@@ -24,7 +24,7 @@ export default class DiggIt extends Component {
 		var diggit;
 		if (DIGGIT_WORDS.some(function(string) {
 			return text.indexOf(string) >= 0;})) {
-			diggit = <p style={styles.diggit}>"DIGGIT!"</p>
+			diggit = <p style={styles.diggit}>DIGG-IT!</p>
 		} 
 		else {
 			diggit = null

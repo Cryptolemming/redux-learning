@@ -11,6 +11,12 @@ html, body {
 	letter-spacing: 1.2px;
 }
 
+h1 {
+	margin: 0;
+	font-size: 85px;
+	font-style: italic;
+}
+
 a {
 	color: #FBFBFB;
 	text-decoration: none;
