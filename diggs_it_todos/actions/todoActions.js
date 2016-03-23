@@ -7,3 +7,7 @@ export function addItem(item) {
 export function removeItem(index) {
 	return { type: types.REMOVE_ITEM, index }
 }
+
+export function diggIt(item) {
+	return { type: types.DIGG_IT, item }
+}
