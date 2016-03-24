@@ -8,7 +8,6 @@ let styles = {
 		borderRadius: '50%',
 		fontSize: '10px',
 		padding: '5px',
-		verticalAlign: 'middle',
 		color: '#FBFBFB',
 		border: '1px solid #028DD1',
 	},
@@ -35,6 +34,7 @@ export default class DiggIt extends Component {
 			</div>
 		)
 	}
+
 }
 
 DiggIt.propTypes = {

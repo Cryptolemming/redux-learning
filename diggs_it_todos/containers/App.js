@@ -56,9 +56,9 @@ let styles = {
 		alignItems: 'center',
 	},
 	todoList: {
-		padding: '25px',
+		alignItems: 'center',
 		margin: '0 auto',
-		width: '95vw',
+		width: '100%',
 		minWidth: '250px',
 	},
 	footer: {
@@ -81,7 +81,7 @@ class App extends Component {
 		return(
 			<div style={styles.container}>
 				<div style={styles.header}>
-					<h1 style={styles.title}>DIGG-ITS</h1>
+					<h1 style={styles.title}>DIGG-IT</h1>
 					<i className='fa fa-check' style={styles.diggit}></i>
 					<div style={styles.todoAdd}>
 						<h3>Will your TODO earn a DIGG-IT?</h3>
@@ -94,7 +94,7 @@ class App extends Component {
 						<List items={todos} remove={actions.removeItem} />
 				</div>
 				<div style={styles.footer}>
-					<a style={styles.footerLink} href='https://www.amoderndev.com'>created by ali ayoub</a> 
+					<a style={styles.footerLink} href='https://www.amoderndev.com'>&copy; ali ayoub 2016</a> 
 				</div>
 			</div>
 		)
