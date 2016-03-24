@@ -5,23 +5,24 @@ import Radium from 'radium';
 const styles = {
 	todoContainer: {
 		alignItems: 'center',
-		marginTop: '25px',
+		margin: '50px',
 		color: '#727272',
-		alignItems: 'center',
+		textAlign: 'center',
 	},
 	todoText: {
-		fontSize: '28px !important',
+		fontSize: '32px !important',
 		textAlign: 'center',
 		fontStyle: 'italic',
 		fontFamily: 'cursive !important',
 	},
 	remove: {
 		fontSize: '18px',
-		background: '#727272',
-		float: 'left',
 		background: 'transparent',
 		border: 0,
 		color: '#727272',
+	},
+	diggit: {
+		float: 'right',
 	}
 }
 
@@ -39,7 +40,7 @@ export default class List extends Component {
 				<li key={index} style={styles.todoContainer}>
 					<p style={styles.todoText}>'{item}'</p>
 					<button style={styles.remove} onClick={this.props.remove.bind(null, index)}>Completed ?</button>
-					<DiggIt text={item} />
+					<DiggIt style={styles.diggit} text={item} />
 				</li>
 			)
 		});

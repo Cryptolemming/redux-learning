@@ -1,25 +1,18 @@
 import React, { PropTypes, Component } from 'react';
 import Radium from  'radium';
+import DIGGIT_WORDS from '../constants/diggitWords';
 
 let styles = {
 	diggit: {
 		background: '#FF4081',
 		borderRadius: '50%',
-		fontSize: '20px',
-		padding: '10px',
+		fontSize: '10px',
+		padding: '5px',
 		verticalAlign: 'middle',
 		color: '#FBFBFB',
-		border: '3px solid #028DD1',
+		border: '1px solid #028DD1',
 	},
-	diggitList: {
-		textAlign: 'right',
-	},
-	li: {
-		display: 'inline',
-	}
 }
-
-const DIGGIT_WORDS = ['love', 'music', 'code', 'program', 'learn', 'cool', 'build'];
 
 @Radium
 export default class DiggIt extends Component {
@@ -30,12 +23,10 @@ export default class DiggIt extends Component {
 		if (DIGGIT_WORDS.some(function(string) {
 			return text.indexOf(string) >= 0;})) {
 			diggit =
-				<ul style={styles.diggitList}>
-					<li><i className='fa fa-check' style={styles.diggit}></i>  DIGG-IT!</li>
-				</ul>
+					<div><i className='fa fa-check' style={styles.diggit}></i>  DIGG-IT!</div>
 		} 
 		else {
-			diggit = null
+			diggit = ''
 		}
 
 		return (

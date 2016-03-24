@@ -65,7 +65,7 @@ let styles = {
 		bottom: 0,
 		position: 'fixed',
 		height: '25px',
-		background: 'transparent',
+		background: '#FBFBFB',
 	},
 	footerLink: {
 		color: '#0288D1',
