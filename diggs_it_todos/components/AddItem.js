@@ -7,6 +7,9 @@ let styles = {
 	},
 	input: {
 		padding: '5px 15px',
+		fontSize: '14px',
+		width: '250px',
+		outline: 'none',
 	}
 }
 
@@ -24,7 +27,7 @@ export default class AddItem extends Component {
 	render() {
 		return (
 			<div style={styles.todo}>
-				<input style={styles.input} type='text' ref='newItem' placeholder='New Item' onKeyDown={this.handleSubmit.bind(this)} />
+				<input style={styles.input} type='text' ref='newItem' placeholder='insert a TODO' onKeyDown={this.handleSubmit.bind(this)} />
 			</div>
 		)
 	}

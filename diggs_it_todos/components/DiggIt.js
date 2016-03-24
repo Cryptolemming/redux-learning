@@ -3,14 +3,19 @@ import Radium from  'radium';
 
 let styles = {
 	diggit: {
-		float: 'right',
 		background: '#FF4081',
 		borderRadius: '50%',
-		fontSize: '12px',
+		fontSize: '20px',
 		padding: '10px',
-		height: '35px',
-		width: '55px',
 		verticalAlign: 'middle',
+		color: '#FBFBFB',
+		border: '3px solid #028DD1',
+	},
+	diggitList: {
+		textAlign: 'right',
+	},
+	li: {
+		display: 'inline',
 	}
 }
 
@@ -24,7 +29,10 @@ export default class DiggIt extends Component {
 		var diggit;
 		if (DIGGIT_WORDS.some(function(string) {
 			return text.indexOf(string) >= 0;})) {
-			diggit = <p style={styles.diggit}>DIGG-IT!</p>
+			diggit =
+				<ul style={styles.diggitList}>
+					<li><i className='fa fa-check' style={styles.diggit}></i>  DIGG-IT!</li>
+				</ul>
 		} 
 		else {
 			diggit = null

@@ -3,18 +3,25 @@ import DiggIt from './DiggIt';
 import Radium from 'radium';
 
 const styles = {
-	todo: {
+	todoContainer: {
 		alignItems: 'center',
-		background: '#0288D1',
-		padding: '25px',
-		margin: '25px',
-		color: '#FBFBFB',
-		fontSize:  '16px',
+		marginTop: '25px',
+		color: '#727272',
 		alignItems: 'center',
 	},
+	todoText: {
+		fontSize: '28px !important',
+		textAlign: 'center',
+		fontStyle: 'italic',
+		fontFamily: 'cursive !important',
+	},
 	remove: {
-		fontSize: '14px',
+		fontSize: '18px',
 		background: '#727272',
+		float: 'left',
+		background: 'transparent',
+		border: 0,
+		color: '#727272',
 	}
 }
 
@@ -29,16 +36,16 @@ export default class List extends Component {
 
 		let handleListItems = this.props.items.map((item, index) => {
 			return(
-				<li key={index} style={styles.todo}>
-					<p>{item}</p>
-					<button style={styles.remove} onClick={this.props.remove.bind(null, index)}>Completed</button>
+				<li key={index} style={styles.todoContainer}>
+					<p style={styles.todoText}>'{item}'</p>
+					<button style={styles.remove} onClick={this.props.remove.bind(null, index)}>Completed ?</button>
 					<DiggIt text={item} />
 				</li>
 			)
 		});
 
 		return (
-			<ul style={styles.list}>
+			<ul>
 				{handleListItems}
 			</ul>
 		)

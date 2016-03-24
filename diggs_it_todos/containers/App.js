@@ -25,31 +25,41 @@ let styles = {
 		margin: 0,
 		width: '100%',
 		height: '50vh',
-		minHeight: '400px',
+		minHeight: '500px',
 		background: '#03A9F4',
 		color: '#B3E5FC',
 		textAlign: 'center',
+		justifyContent: 'middle',
 	},
 	title: {
 		fontsize: '85px',
-		padding: '50px',
+		padding: '20px',
 		color: '#FBFBFB',
+	},
+	diggit: {
+		background: '#FF4081',
+		borderRadius: '50%',
+		fontSize: '80px',
+		padding: '10px',
+		verticalAlign: 'middle',
+		color: '#FBFBFB',
+		margin: 0,
+		border: '5px solid #028DD1',
 	},
 	divider: {
 		width: '100%',
-		height: '25px',
+		height: '15px',
 		background: '#0288D1',
 	},
 	todoAdd: {
-		padding: '60px',
+		padding: '20px',
 		alignItems: 'center',
 	},
 	todoList: {
 		padding: '25px',
 		margin: '0 auto',
-		width: '55vw',
+		width: '95vw',
 		minWidth: '250px',
-		alignItems: 'center',
 	},
 	footer: {
 		bottom: 0,
@@ -72,6 +82,7 @@ class App extends Component {
 			<div style={styles.container}>
 				<div style={styles.header}>
 					<h1 style={styles.title}>DIGG-ITS</h1>
+					<i className='fa fa-check' style={styles.diggit}></i>
 					<div style={styles.todoAdd}>
 						<h3>Will your TODO earn a DIGG-IT?</h3>
 						<h3>Add one to find out</h3>
